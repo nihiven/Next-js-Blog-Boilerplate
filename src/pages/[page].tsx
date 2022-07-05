@@ -15,6 +15,7 @@ type IPageUrl = {
 };
 
 const PaginatePosts = (props: IBlogGalleryProps) => (
+  // NEW: What should this Lorem ipsum be replaced with?
   <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
     <BlogGallery posts={props.posts} pagination={props.pagination} />
   </Main>
@@ -42,7 +43,7 @@ export const getStaticProps: GetStaticProps<
   IBlogGalleryProps,
   IPageUrl
 > = async ({ params }) => {
-  const posts = getAllPosts(['title', 'date', 'slug']);
+  const posts = getAllPosts(['title', 'date', 'tags', 'slug']);
 
   const pages = convertTo2D(posts, AppConfig.pagination_size);
   const currentPage = Number(params!.page.replace('page', ''));

@@ -9,6 +9,7 @@
     "package-lock.json": true
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  // BUG: if formatOnSave is true, the formatters fight each other. not sure which one 'wins'
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
@@ -17,6 +18,9 @@
   // Multiple language settings for json and jsonc files
   "[json][jsonc]": {
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

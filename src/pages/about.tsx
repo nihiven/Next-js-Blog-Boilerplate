@@ -3,22 +3,25 @@ import React from 'react';
 import { Content } from '../content/Content';
 import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
+import { AppConfig } from '../utils/AppConfig';
 
 const About = () => (
-  <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
+  <Main
+    meta={
+      <Meta title={AppConfig.description} description={AppConfig.description} />
+    }
+  >
     <Content>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione fuga
-        recusandae quidem. Quaerat molestiae blanditiis doloremque possimus
-        labore voluptatibus distinctio recusandae autem esse explicabo molestias
-        officia placeat, accusamus aut saepe.
+        Hi all, welcome to jebLabs! This is my dog Samus. Check out{' '}
+        <a href="https://instagram.com/SecretSamus">her Instagram.</a>
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione fuga
-        recusandae quidem. Quaerat molestiae blanditiis doloremque possimus
-        labore voluptatibus distinctio recusandae autem esse explicabo molestias
-        officia placeat, accusamus aut saepe.
-      </p>
+      <img
+        className="max-w-full h-auto rounded-lg shadow object-scale-down"
+        alt="JB and Samus!"
+        src="/assets/images/jb-and-sam.jpg"
+      />
+      <p>See you around. </p>
     </Content>
   </Main>
 );

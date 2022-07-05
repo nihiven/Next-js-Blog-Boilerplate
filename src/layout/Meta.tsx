@@ -53,7 +53,7 @@ const Meta = (props: IMetaProps) => {
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
-        <title>{`${props.title} | ${AppConfig.site_name}`}</title>
+        <title>{`${AppConfig.site_name}: ${props.title}`}</title>
         <meta
           name="description"
           content={
@@ -133,7 +133,7 @@ const Meta = (props: IMetaProps) => {
               },
               "name": "${AppConfig.author}"
             },
-            "headline": "${props.title} | ${AppConfig.site_name}",
+            "headline": "${AppConfig.site_name}: ${props.title}",
             "image": ["${AppConfig.url}${router.basePath}${props.post.image}"],
             "datePublished": "${new Date(props.post.date).toISOString()}",
             "dateModified": "${new Date(

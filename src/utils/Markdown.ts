@@ -1,4 +1,5 @@
 // TODO: @mapbox/rehype-prism does not have typescript definition
+// TODO: need to find a way to embed youtube videos
 // @ts-ignore
 import rehypePrism from '@mapbox/rehype-prism';
 import html from 'rehype-stringify';

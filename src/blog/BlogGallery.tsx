@@ -14,19 +14,28 @@ export type IBlogGalleryProps = {
 const BlogGallery = (props: IBlogGalleryProps) => (
   <>
     <ul>
-      {props.posts.map((elt) => (
-        <li key={elt.slug} className="mb-3 flex justify-between">
-          <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
-            <a>
-              <h2>{elt.title}</h2>
-            </a>
-          </Link>
-
-          <div className="text-right">
-            {format(new Date(elt.date), 'LLL d, yyyy')}
-          </div>
-        </li>
-      ))}
+      {
+        // NEW: add cool emojis based on tag values
+        props.posts.map((post) => (
+          <li key={post.slug} className="mb-3 flex justify-between">
+            <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
+              <a>
+                <h2>{post.title}</h2>
+              </a>
+            </Link>
+            {
+              // NEXT: what do we do about linking the emojis?
+              post.emojis ? post.emojis : ''
+            }
+            <div className="text-right">
+              {
+                // skip new Date() if there isn't anything in date
+                post.date ? format(new Date(post.date), 'LLL d, yyyy') : ''
+              }
+            </div>
+          </li>
+        ))
+      }
     </ul>
 
     <Pagination

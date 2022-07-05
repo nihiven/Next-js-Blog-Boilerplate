@@ -3,6 +3,8 @@ import { join } from 'path';
 
 import matter from 'gray-matter';
 
+import { translateEmojis } from './TagEmojis';
+
 const postsDirectory = join(process.cwd(), '_posts');
 
 export type PostItems = {
@@ -29,11 +31,19 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
       items[field] = content;
     }
 
+    if (field === 'tags') {
+      // NEXT
+      if (Array.isArray(data.tags)) {
+        items.emojis = translateEmojis(data.tags);
+      }
+    }
+
+    // console.log(field, data.tags, Array.isArray(data.tags));
+
     if (data[field]) {
       items[field] = data[field];
     }
   });
-
   return items;
 }
 

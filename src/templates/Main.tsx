@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import Link from 'next/link';
+import { FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 import { Navbar } from '../navigation/Navbar';
 import { AppConfig } from '../utils/AppConfig';
@@ -17,9 +18,7 @@ const Main = (props: IMainProps) => (
     <div className="max-w-screen-md mx-auto">
       <div className="border-b border-gray-300">
         <div className="pt-16 pb-8">
-          <div className="font-semibold text-3xl text-gray-900">
-            {AppConfig.title}
-          </div>
+          <div className="font-semibold text-5xl">{AppConfig.title}</div>
           <div className="text-xl">{AppConfig.description}</div>
         </div>
         <div>
@@ -35,8 +34,18 @@ const Main = (props: IMainProps) => (
               </Link>
             </li>
             <li className="mr-6">
-              <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">
-                GitHub
+              <a href="https://github.com/nihiven/">
+                <FaGithub />
+              </a>
+            </li>
+            <li className="mr-6">
+              <a href="https://twitter.com/nihiven">
+                <FaTwitter />
+              </a>
+            </li>
+            <li className="mr-6">
+              <a href="https://instagram.com/nihiven">
+                <FaInstagram />
               </a>
             </li>
           </Navbar>
@@ -46,8 +55,9 @@ const Main = (props: IMainProps) => (
       <div className="text-xl py-5">{props.children}</div>
 
       <div className="border-t border-gray-300 text-center py-8 text-sm">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
-        <span role="img" aria-label="Love">
+        © Copyright {new Date().getFullYear()} {AppConfig.title}{' '}
+        <span className="font-semibold">|</span> Powered with{' '}
+        <span className="text-red-800" role="img" aria-label="Love">
           ♥
         </span>{' '}
         by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
