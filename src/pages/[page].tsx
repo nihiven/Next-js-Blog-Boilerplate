@@ -16,7 +16,9 @@ type IPageUrl = {
 
 const PaginatePosts = (props: IBlogGalleryProps) => (
   // NEW: What should this Lorem ipsum be replaced with?
-  <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
+  <Main
+    meta={<Meta title={AppConfig.title} description={AppConfig.description} />}
+  >
     <BlogGallery posts={props.posts} pagination={props.pagination} />
   </Main>
 );
