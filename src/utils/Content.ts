@@ -32,7 +32,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
 
     if (field === 'tags') {
-      // NEXT
       if (Array.isArray(data.tags)) {
         items.emojis = translateEmojis(data.tags);
       }

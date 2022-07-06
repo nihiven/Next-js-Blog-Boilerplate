@@ -53,7 +53,7 @@ const Meta = (props: IMetaProps) => {
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
-        <title>{`${AppConfig.site_name}: ${props.title}`}</title>
+        <title>{`${AppConfig.site_name}`}</title>
         <meta
           name="description"
           content={

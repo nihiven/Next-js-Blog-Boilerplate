@@ -1,20 +1,38 @@
-const tagEmojis = new Map();
-tagEmojis.set('monkey', '🐒');
-tagEmojis.set('finance', '💵');
-tagEmojis.set('game', '👾');
-tagEmojis.set('idea', '💡');
-tagEmojis.set('design', '📐');
-tagEmojis.set('sucks', '👎');
-tagEmojis.set('hardware', '💻');
-tagEmojis.set('weekly', '📆');
-tagEmojis.set('links', '🔗');
-tagEmojis.set('review', '🤔');
+// TODO: what's the best way to code these lists?
+const tagEmojis = new Map([
+  ['monkey', '🐒'],
+  ['finance', '💵'],
+  ['game', '👾'],
+  ['idea', '💡'],
+  ['design', '📐'],
+  ['sucks', '👎'],
+  ['hardware', '💻'],
+  ['weekly', '📆'],
+  ['links', '🔗'],
+  ['review', '🤔'],
+]);
 
-export function translateEmojis(words: Array<String>): string {
-  let test: string = '';
-  test = '';
+/*
+const tagDesc = new Map([
+  ['monkey', 'Amazing Monkey Content'],
+  ['finance', '"This is not financial advice."'],
+  ['game', 'Video Games'],
+  ['idea', 'Bright Idea'],
+  ['design', 'Design Related'],
+  ['sucks', 'This SUCKS!'],
+  ['hardware', 'Hardware Related'],
+  ['weekly', 'Weekly Post'],
+  ['links', 'Cool Links'],
+  ['review', 'Review'],
+]);
+*/
+
+export function translateEmojis(words: Array<string>): string {
+  let emojis: string = '';
+
   words.forEach((tag) => {
-    if (tagEmojis.has(tag)) test += tagEmojis.get(tag);
+    if (tagEmojis.has(tag)) emojis += tagEmojis.get(tag);
   });
-  return test;
+
+  return emojis;
 }

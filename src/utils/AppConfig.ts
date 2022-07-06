@@ -1,9 +1,9 @@
 export const AppConfig = {
-  site_name: 'jebLabs',
-  title: 'jebLabs',
-  description: 'Things I find. Things I write. Pictures of monkeys.',
+  site_name: 'nvn.io',
+  title: 'nvn.io',
+  description: `JB's Amazing Website 🐵`,
   url: 'https://nvn.io',
   locale: 'en',
   author: 'jb',
-  pagination_size: 5,
+  pagination_size: 10,
 };
